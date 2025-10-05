@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: Báo cáo Kinh doanh Tuần - FPT Software</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F5F5F5;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body class="text-[#333333]">
+
+    <div class="container mx-auto p-4 sm:p-6 md:p-8 max-w-7xl">
+
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-[#004AAD] mb-2">Báo Cáo Hiệu Suất Kinh Doanh Tuần</h1>
+            <p class="text-lg md:text-xl text-gray-600">Phân tích toàn diện và mục tiêu chiến lược</p>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="md:col-span-2 lg:col-span-1 bg-white p-6 rounded-lg shadow-md flex flex-col justify-center items-center text-center">
+                <h2 class="text-xl font-bold text-[#004AAD] mb-2">Tổng Doanh Thu Tuần</h2>
+                <p class="text-6xl font-extrabold text-[#0094D1]">520 <span class="text-4xl">triệu VNĐ</span></p>
+                <div class="mt-4 text-2xl font-bold text-green-500 bg-green-100 rounded-full px-4 py-1">
+                    ▲ 8.3%
+                </div>
+                <p class="mt-3 text-gray-500">So với tuần trước (480 triệu VNĐ)</p>
+            </div>
+
+            <div class="lg:col-span-2 bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold text-[#004AAD] mb-1 text-center">Tăng Trưởng Các Chỉ Số Chính (KPIs)</h2>
+                <p class="text-gray-600 mb-4 text-center">Báo cáo tuần này ghi nhận sự tăng trưởng đồng bộ trên tất cả các chỉ số quan trọng, phản ánh hiệu suất ổn định từ thu hút khách hàng mới đến việc chốt hợp đồng và duy trì lòng trung thành của khách hàng cũ.</p>
+                <div class="chart-container">
+                    <canvas id="kpiGrowthChart"></canvas>
+                </div>
+            </div>
+
+            <div class="lg:col-span-1 bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold text-[#004AAD] mb-1 text-center">Phân Khúc Khách Hàng</h2>
+                 <p class="text-gray-600 mb-4 text-center">Doanh nghiệp vừa và nhỏ (SMEs) tiếp tục là phân khúc khách hàng cốt lõi, chiếm phần lớn cơ cấu. Điều này khẳng định thế mạnh của FPT Software trong việc cung cấp giải pháp ERP và kế toán.</p>
+                <div class="chart-container">
+                    <canvas id="customerSegmentChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="md:col-span-1 bg-white p-6 rounded-lg shadow-md flex flex-col justify-center items-center text-center">
+                <h2 class="text-xl font-bold text-[#004AAD] mb-2">Khách Hàng Mới</h2>
+                <p class="text-6xl font-extrabold text-[#0094D1]">15</p>
+                <p class="mt-3 text-gray-500 font-medium">Thu hút thành công từ chiến dịch Facebook Ads</p>
+            </div>
+
+            <div class="md:col-span-1 bg-white p-6 rounded-lg shadow-md flex flex-col justify-center items-center text-center">
+                <h2 class="text-xl font-bold text-[#004AAD] mb-2">Khách Hàng Quay Lại</h2>
+                <p class="text-6xl font-extrabold text-[#89D6E8]">38</p>
+                <p class="mt-3 text-gray-500 font-medium">Minh chứng cho chất lượng dịch vụ và hỗ trợ hậu mãi</p>
+            </div>
+
+            <div class="md:col-span-2 lg:col-span-3 bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold text-red-600 mb-4 text-center">Thách Thức & Rủi Ro Chiến Lược Cần Đối Mặt</h2>
+                <p class="text-gray-600 mb-6 text-center max-w-4xl mx-auto">Mặc dù đạt kết quả tốt, chúng ta cần tập trung giải quyết các điểm nghẽn có thể ảnh hưởng đến tăng trưởng bền vững, đặc biệt là các vấn đề kỹ thuật và rào cản chi phí đối với khách hàng.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                    <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                        <p class="text-4xl mb-2">💳</p>
+                        <h3 class="font-bold text-red-800">Gián Đoạn Thanh Toán</h3>
+                        <p class="text-sm text-red-700">Rủi ro kỹ thuật làm gián đoạn quy trình thanh toán online, có nguy cơ làm mất đơn hàng ở bước cuối cùng.</p>
+                    </div>
+                    <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                        <p class="text-4xl mb-2">💰</p>
+                        <h3 class="font-bold text-yellow-800">E Ngại Chi Phí Bảo Trì</h3>
+                        <p class="text-sm text-yellow-700">Khách hàng SME lo ngại về chi phí bảo trì, ảnh hưởng đến khả năng tái ký và doanh thu định kỳ.</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                         <p class="text-4xl mb-2">⚔️</p>
+                        <h3 class="font-bold text-blue-800">Cạnh Tranh Gay Gắt</h3>
+                        <p class="text-sm text-blue-700">Sự cạnh tranh từ các đối thủ trong khu vực đòi hỏi sự khác biệt hóa về sản phẩm và dịch vụ.</p>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg border border-gray-200">
+                        <p class="text-4xl mb-2">📉</p>
+                        <h3 class="font-bold text-gray-800">Lưu Lượng Giảm</h3>
+                        <p class="text-sm text-gray-700">Nguy cơ giảm lượng khách hàng trong các kỳ nghỉ lễ sắp tới cần có kế hoạch marketing chủ động.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 lg:col-span-3 bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold text-[#004AAD] mb-4 text-center">Kế Hoạch & Mục Tiêu Tuần Tới</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                         <h3 class="text-xl font-bold text-center mb-1">Chinh Phục Mục Tiêu Doanh Thu: 600 Triệu VNĐ</h3>
+                         <p class="text-gray-600 mb-4 text-center">Để đạt mục tiêu tăng trưởng 15.4%, cần một nỗ lực vượt bậc. Biểu đồ dưới đây thể hiện chặng đường cần đi.</p>
+                        <div class="chart-container h-48 sm:h-56 md:h-64">
+                            <canvas id="goalChart"></canvas>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Các hành động trọng tâm:</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-green-500 font-bold text-xl mr-3">✓</span>
+                                <div>
+                                    <h4 class="font-semibold">Khuyến mãi 10% cho gói Phần mềm Kế toán</h4>
+                                    <p class="text-sm text-gray-500">Thúc đẩy doanh số cho sản phẩm chủ lực.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 font-bold text-xl mr-3">✓</span>
+                                <div>
+                                    <h4 class="font-semibold">Tổ chức Hội thảo mini về FPT Cloud AI</h4>
+                                    <p class="text-sm text-gray-500">Giới thiệu sản phẩm mới và thu hút khách hàng tiềm năng.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 font-bold text-xl mr-3">✓</span>
+                                <div>
+                                    <h4 class="font-semibold">Tăng cường Marketing đa kênh</h4>
+                                    <p class="text-sm text-gray-500">Đẩy mạnh quảng bá trên Facebook Ads, Zalo OA và Email.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    const wrapLabel = (label) => {
+        const max_width = 16;
+        if (label.length <= max_width) {
+            return label;
+        }
+        const words = label.split(' ');
+        let lines = [];
+        let currentLine = '';
+        words.forEach(word => {
+            if ((currentLine + ' ' + word).trim().length > max_width) {
+                lines.push(currentLine);
+                currentLine = word;
+            } else {
+                currentLine = (currentLine + ' ' + word).trim();
+            }
+        });
+        if (currentLine) {
+            lines.push(currentLine);
+        }
+        return lines;
+    };
+    
+    const tooltipTitleCallback = (tooltipItems) => {
+        const item = tooltipItems[0];
+        let label = item.chart.data.labels[item.dataIndex];
+        return Array.isArray(label) ? label.join(' ') : label;
+    };
+
+    const brilliantBlues = {
+        deep: '#004AAD',
+        bright: '#0094D1',
+        light: '#89D6E8',
+        accent: '#FFC107'
+    };
+
+    const commonChartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                position: 'bottom',
+                labels: {
+                    font: {
+                        family: 'Inter',
+                        size: 12
+                    }
+                }
+            },
+            tooltip: {
+                callbacks: {
+                    title: tooltipTitleCallback
+                },
+                titleFont: { family: 'Inter' },
+                bodyFont: { family: 'Inter' }
+            }
+        },
+        scales: {
+            x: {
+                ticks: {
+                    font: { family: 'Inter', size: 12 }
+                },
+                grid: {
+                    display: false
+                }
+            },
+            y: {
+                ticks: {
+                    font: { family: 'Inter', size: 12 }
+                },
+                 grid: {
+                    color: '#e0e0e0',
+                    borderDash: [2, 4],
+                }
+            }
+        }
+    };
+
+
+    function initKpiGrowthChart() {
+        const ctx = document.getElementById('kpiGrowthChart').getContext('2d');
+        const labels = ['Doanh thu', 'Số hóa đơn', 'Khách hàng mới', 'Hợp đồng ERP (SMEs)'];
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels.map(wrapLabel),
+                datasets: [{
+                    label: 'Tăng trưởng (%)',
+                    data: [8.3, 13.6, 25, 25],
+                    backgroundColor: [brilliantBlues.deep, brilliantBlues.bright, brilliantBlues.light, brilliantBlues.accent],
+                    borderColor: '#ffffff',
+                    borderWidth: 2,
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                ...commonChartOptions,
+                scales: {
+                     x: {
+                        ticks: {
+                            font: { family: 'Inter', size: 12 }
+                        },
+                        grid: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Tăng trưởng (%)',
+                            font: { family: 'Inter', size: 12 }
+                        },
+                        ticks: {
+                            font: { family: 'Inter', size: 12 }
+                        }
+                    }
+                },
+                plugins: {
+                     ...commonChartOptions.plugins,
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+    }
+
+    function initCustomerSegmentChart() {
+        const ctx = document.getElementById('customerSegmentChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['SMEs', 'Khách hàng cá nhân', 'Doanh nghiệp lớn'],
+                datasets: [{
+                    label: 'Phân khúc khách hàng',
+                    data: [60, 25, 15],
+                    backgroundColor: [brilliantBlues.deep, brilliantBlues.bright, brilliantBlues.light],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                ...commonChartOptions,
+                cutout: '60%',
+                plugins: {
+                    ...commonChartOptions.plugins,
+                     legend: {
+                        position: 'bottom',
+                         labels: {
+                             font: { family: 'Inter', size: 12 }
+                         }
+                    }
+                }
+            }
+        });
+    }
+
+    function initGoalChart() {
+        const ctx = document.getElementById('goalChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Doanh thu'],
+                datasets: [
+                {
+                    label: 'Đã đạt được',
+                    data: [520],
+                    backgroundColor: brilliantBlues.bright,
+                    borderWidth: 0,
+                    barPercentage: 0.5,
+                    borderRadius: { topRight: 5, bottomRight: 5 },
+                },
+                {
+                    label: 'Mục tiêu',
+                    data: [600],
+                    backgroundColor: '#e0e0e0',
+                    borderWidth: 0,
+                    barPercentage: 0.5,
+                     borderRadius: 5,
+                }
+                ]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        stacked: false,
+                        max: 600,
+                        title: {
+                            display: true,
+                            text: 'Triệu VNĐ',
+                            font: { family: 'Inter' }
+                        },
+                        grid: { display: false },
+                        ticks: { font: { family: 'Inter' } }
+                    },
+                    y: {
+                        stacked: true,
+                        grid: { display: false },
+                        ticks: { display: false }
+                    }
+                },
+                 plugins: {
+                    legend: {
+                         position: 'bottom',
+                         labels: {
+                             font: { family: 'Inter' }
+                         }
+                    },
+                    tooltip: {
+                         callbacks: {
+                            title: (tooltipItems) => '',
+                             label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.x !== null) {
+                                    label += context.parsed.x + ' triệu VNĐ';
+                                }
+                                return label;
+                            }
+                        },
+                        titleFont: { family: 'Inter' },
+                        bodyFont: { family: 'Inter' }
+                    }
+                }
+            }
+        });
+    }
+
+    initKpiGrowthChart();
+    initCustomerSegmentChart();
+    initGoalChart();
+});
+</script>
+</body>
+</html>
